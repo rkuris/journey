@@ -1,20 +1,20 @@
 {
-	"HttpHostAndPort":":8084",
-	"HttpsHostAndPort":":8085",
+        "HttpHostAndPort":":8084",
+        "HttpsHostAndPort":":8085",
 	"HttpsUsage":"None",
-	"Url":"http://127.0.0.1:8084",
-	"HttpsUrl":"https://127.0.0.1:8085",
+	"Url":"https://svjaneo.com",
+	"HttpsUrl":"https://svjaneo.com",
 	"UseLetsEncrypt":false,
-	"SAMLCert":"",
-	"SAMLKey":"",
-	"SAMLIDPUrl":"",
-	"RequestLog":"",
-	"RequestLogFormat":"",
+	"SAMLCert":"/home/rk/svjaneo.cert",
+	"SAMLKey":"/home/rk/svjaneo.key",
+	"SAMLIDPUrl":"/home/rk/GoogleIDPMetadata.xml",
+	"RequestLog":"/home/rk/journey.log",
+	"RequestLogFormat":"%{X-Forwarded-For}i %l %u %t \"%r\" %>s %b \"%{Referer}i\" \"%{User-agent}i\"",
 	"SMTP": {
-		"SMTPUserName":"",
-		"SMTPServer":"",
-		"SMTPPassword":"${PASSWORD_ENVORNMENT}",
-		"Sender":"you@somewhere.com",
-		"Recipient":"mailinglist@somewhere.com"
+		"SMTPUserName":"jane@svjaneo.com",
+		"SMTPServer":"smtp.gmail.com:587",
+		"SMTPPassword":"${JANE_PASSWORD}",
+		"Sender":"jane@svjaneo.com",
+		"Recipient":"post-announcements@svjaneo.com"
 	}
 }
