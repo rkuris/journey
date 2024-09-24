@@ -273,7 +273,12 @@ func postAPIPostHandler(w http.ResponseWriter, r *http.Request, _ map[string]str
 			return
 		}
 		if post.IsPublished {
-			notifications.Send(string(post.Title), "https://svjaneo.com/"+post.Slug)
+			err = notifications.Send(string(post.Title), "https://svjaneo.com/"+post.Slug)
+			if err != nil {
+				http.Error(w, err.Error(), http.StatusInternalServerError)
+				return
+			}
+
 		}
 		w.WriteHeader(http.StatusOK)
 		w.Write([]byte("Post created!"))

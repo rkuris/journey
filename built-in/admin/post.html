@@ -29,6 +29,9 @@
 			 		<a ng-controller="EmptyModalCtrl" ng-click="open('lg', 'post-help')">
 			 			<span class="glyphicon glyphicon-question-sign markdown-modal-button" aria-hidden="true"></span>
 					</a>
+					<a ng-controller="ProgressModalCtrl" ng-click="open()"">
+			 			<span class="glyphicon glyphicon-flag markdown-modal-button" aria-hidden="true"></span>
+					</a>
 					<textarea class="textarea-autosize" id="markdown-textarea" rows="15" ng-model="shared.post.Markdown" ng-change="change()">{shared.post.Markdown}</textarea>
 				</div>
 			</div>

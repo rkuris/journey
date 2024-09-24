@@ -32,6 +32,7 @@ type Notification struct {
 const TemplateText = `To: {{.Recipient}}
 MIME-version: 1.0;
 Content-Type: text/html; charset="UTF-8";
+List-Unsubscribe: <mailto:ron@svjaneo.com?subject=unsubcribe>
 Subject: New Post: {{.Title}}
 
 

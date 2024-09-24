@@ -248,6 +248,27 @@ adminApp.controller('EmptyModalCtrl', function ($scope, $uibModal, $http, sharin
   };
 });
 
+adminApp.controller('ProgressModalCtrl', function($scope, $uibModal, $http) {
+  $scope.open = function () {
+    var modalInstance = $uibModal.open({
+      templateUrl: '/admin/progress-bar.tpl',
+      controller: 'ProgressModalInstanceCtrl'
+    });
+    modalInstance.result.then(function () {
+    });
+  };
+});
+
+adminApp.controller('ProgressModalInstanceCtrl', function ($scope, $http, $uibModalInstance, sharingService) {
+  $scope.shared = sharingService.shared;
+  $scope.ok = function () {
+    $uibModalInstance.close();
+  };
+  $scope.cancel = function () {
+    $uibModalInstance.dismiss('cancel');
+  };
+});
+
 //modal for image selection and upload
 adminApp.controller('ImageModalCtrl', function ($scope, $uibModal, $http, sharingService, infiniteScrollFactory) {
   $scope.shared = sharingService.shared;
